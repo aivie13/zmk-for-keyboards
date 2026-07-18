@@ -206,7 +206,7 @@ text.held {
 <g transform="translate(90, 112)" class="key keypos-13">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
 <text x="0" y="0" class="key tap">A</text>
-<text x="0" y="26" class="key hold">LGUI</text>
+<text x="0" y="26" class="key hold">LCTRL</text>
 </g>
 <g transform="translate(150, 98)" class="key keypos-14">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
@@ -216,7 +216,7 @@ text.held {
 <g transform="translate(210, 90)" class="key keypos-15">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
 <text x="0" y="0" class="key tap">D</text>
-<text x="0" y="26" class="key hold">LCTRL</text>
+<text x="0" y="26" class="key hold">LGUI</text>
 </g>
 <g transform="translate(270, 98)" class="key keypos-16">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
@@ -239,7 +239,7 @@ text.held {
 <g transform="translate(690, 90)" class="key keypos-20">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
 <text x="0" y="0" class="key tap">K</text>
-<text x="0" y="26" class="key hold">LCTRL</text>
+<text x="0" y="26" class="key hold">LGUI</text>
 </g>
 <g transform="translate(750, 98)" class="key keypos-21">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
@@ -249,7 +249,7 @@ text.held {
 <g transform="translate(810, 112)" class="key keypos-22">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
 <text x="0" y="0" class="key tap">&#x27;</text>
-<text x="0" y="26" class="key hold">LGUI</text>
+<text x="0" y="26" class="key hold">LCTRL</text>
 </g>
 <g transform="translate(870, 112)" class="key keypos-23">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
@@ -399,7 +399,7 @@ text.held {
 <g transform="translate(90, 112)" class="key keypos-13">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
 <text x="0" y="0" class="key tap">A</text>
-<text x="0" y="26" class="key hold">LGUI</text>
+<text x="0" y="26" class="key hold">LCTRL</text>
 </g>
 <g transform="translate(150, 98)" class="key keypos-14">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
@@ -409,7 +409,7 @@ text.held {
 <g transform="translate(210, 90)" class="key keypos-15">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
 <text x="0" y="0" class="key tap">S</text>
-<text x="0" y="26" class="key hold">LCTRL</text>
+<text x="0" y="26" class="key hold">LGUI</text>
 </g>
 <g transform="translate(270, 98)" class="key keypos-16">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
@@ -432,7 +432,7 @@ text.held {
 <g transform="translate(690, 90)" class="key keypos-20">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
 <text x="0" y="0" class="key tap">E</text>
-<text x="0" y="26" class="key hold">LCTRL</text>
+<text x="0" y="26" class="key hold">LGUI</text>
 </g>
 <g transform="translate(750, 98)" class="key keypos-21">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
@@ -442,7 +442,7 @@ text.held {
 <g transform="translate(810, 112)" class="key keypos-22">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
 <text x="0" y="0" class="key tap">O</text>
-<text x="0" y="26" class="key hold">LGUI</text>
+<text x="0" y="26" class="key hold">LCTRL</text>
 </g>
 <g transform="translate(870, 112)" class="key keypos-23">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
@@ -758,7 +758,7 @@ text.held {
 </g>
 <g transform="translate(90, 112)" class="key keypos-13">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
-<text x="0" y="0" class="key tap">LGUI</text>
+<text x="0" y="0" class="key tap">LCTRL</text>
 </g>
 <g transform="translate(150, 98)" class="key keypos-14">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
@@ -766,7 +766,7 @@ text.held {
 </g>
 <g transform="translate(210, 90)" class="key keypos-15">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
-<text x="0" y="0" class="key tap">LCTRL</text>
+<text x="0" y="0" class="key tap">LGUI</text>
 </g>
 <g transform="translate(270, 98)" class="key keypos-16">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
@@ -784,7 +784,7 @@ text.held {
 </g>
 <g transform="translate(690, 90)" class="key keypos-20">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
-<text x="0" y="0" class="key tap">LCTRL</text>
+<text x="0" y="0" class="key tap">LGUI</text>
 </g>
 <g transform="translate(750, 98)" class="key keypos-21">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
@@ -792,7 +792,7 @@ text.held {
 </g>
 <g transform="translate(810, 112)" class="key keypos-22">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
-<text x="0" y="0" class="key tap">LGUI</text>
+<text x="0" y="0" class="key tap">LCTRL</text>
 </g>
 <g transform="translate(870, 112)" class="key keypos-23">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
@@ -940,7 +940,7 @@ text.held {
 </g>
 <g transform="translate(90, 112)" class="key keypos-13">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
-<text x="0" y="0" class="key tap">LGUI</text>
+<text x="0" y="0" class="key tap">LCTRL</text>
 </g>
 <g transform="translate(150, 98)" class="key keypos-14">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
@@ -948,7 +948,7 @@ text.held {
 </g>
 <g transform="translate(210, 90)" class="key keypos-15">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
-<text x="0" y="0" class="key tap">LCTRL</text>
+<text x="0" y="0" class="key tap">LGUI</text>
 </g>
 <g transform="translate(270, 98)" class="key keypos-16">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
@@ -1117,7 +1117,7 @@ text.held {
 </g>
 <g transform="translate(90, 112)" class="key keypos-13">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
-<text x="0" y="0" class="key tap">LGUI</text>
+<text x="0" y="0" class="key tap">LCTRL</text>
 </g>
 <g transform="translate(150, 98)" class="key keypos-14">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
@@ -1125,7 +1125,7 @@ text.held {
 </g>
 <g transform="translate(210, 90)" class="key keypos-15">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
-<text x="0" y="0" class="key tap">LCTRL</text>
+<text x="0" y="0" class="key tap">LGUI</text>
 </g>
 <g transform="translate(270, 98)" class="key keypos-16">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
@@ -1305,7 +1305,7 @@ text.held {
 </g>
 <g transform="translate(90, 112)" class="key keypos-13">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
-<text x="0" y="0" class="key tap">LGUI</text>
+<text x="0" y="0" class="key tap">LCTRL</text>
 </g>
 <g transform="translate(150, 98)" class="key keypos-14">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
@@ -1313,7 +1313,7 @@ text.held {
 </g>
 <g transform="translate(210, 90)" class="key keypos-15">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
-<text x="0" y="0" class="key tap">LCTRL</text>
+<text x="0" y="0" class="key tap">LGUI</text>
 </g>
 <g transform="translate(270, 98)" class="key keypos-16">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
@@ -1518,7 +1518,7 @@ text.held {
 </g>
 <g transform="translate(690, 90)" class="key keypos-20">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
-<text x="0" y="0" class="key tap">LCTRL</text>
+<text x="0" y="0" class="key tap">LGUI</text>
 </g>
 <g transform="translate(750, 98)" class="key keypos-21">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
@@ -1526,7 +1526,7 @@ text.held {
 </g>
 <g transform="translate(810, 112)" class="key keypos-22">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
-<text x="0" y="0" class="key tap">LGUI</text>
+<text x="0" y="0" class="key tap">LCTRL</text>
 </g>
 <g transform="translate(870, 112)" class="key keypos-23">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
@@ -1688,7 +1688,7 @@ text.held {
 </g>
 <g transform="translate(690, 90)" class="key keypos-20">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
-<text x="0" y="0" class="key tap">LCTRL</text>
+<text x="0" y="0" class="key tap">LGUI</text>
 </g>
 <g transform="translate(750, 98)" class="key keypos-21">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
@@ -1696,7 +1696,7 @@ text.held {
 </g>
 <g transform="translate(810, 112)" class="key keypos-22">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
-<text x="0" y="0" class="key tap">LGUI</text>
+<text x="0" y="0" class="key tap">LCTRL</text>
 </g>
 <g transform="translate(870, 112)" class="key keypos-23">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
@@ -1858,7 +1858,7 @@ text.held {
 </g>
 <g transform="translate(690, 90)" class="key keypos-20">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
-<text x="0" y="0" class="key tap">LCTRL</text>
+<text x="0" y="0" class="key tap">LGUI</text>
 </g>
 <g transform="translate(750, 98)" class="key keypos-21">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
@@ -1866,7 +1866,7 @@ text.held {
 </g>
 <g transform="translate(810, 112)" class="key keypos-22">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>
-<text x="0" y="0" class="key tap">LGUI</text>
+<text x="0" y="0" class="key tap">LCTRL</text>
 </g>
 <g transform="translate(870, 112)" class="key keypos-23">
 <rect rx="6" ry="6" x="-28" y="-28" width="56" height="56" class="key"/>

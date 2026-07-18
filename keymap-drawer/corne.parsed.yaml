@@ -14,16 +14,16 @@ layers:
   - P
   - ''
   - ''
-  - {t: A, h: LGUI}
+  - {t: A, h: LCTRL}
   - {t: S, h: LALT}
-  - {t: D, h: LCTRL}
+  - {t: D, h: LGUI}
   - {t: F, h: LSHFT}
   - G
   - H
   - {t: J, h: LSHFT}
-  - {t: K, h: LCTRL}
+  - {t: K, h: LGUI}
   - {t: L, h: LALT}
-  - {t: '''', h: LGUI}
+  - {t: '''', h: LCTRL}
   - ''
   - ''
   - {t: Z, h: Button}
@@ -57,16 +57,16 @@ layers:
   - ''''
   - ''
   - ''
-  - {t: A, h: LGUI}
+  - {t: A, h: LCTRL}
   - {t: R, h: LALT}
-  - {t: S, h: LCTRL}
+  - {t: S, h: LGUI}
   - {t: T, h: LSHFT}
   - G
   - M
   - {t: N, h: LSHFT}
-  - {t: E, h: LCTRL}
+  - {t: E, h: LGUI}
   - {t: I, h: LALT}
-  - {t: O, h: LGUI}
+  - {t: O, h: LCTRL}
   - ''
   - ''
   - {t: Z, h: Button}
@@ -101,16 +101,16 @@ layers:
   - Undo
   - ''
   - ''
-  - LGUI
-  - LALT
   - LCTRL
+  - LALT
+  - LGUI
   - LSHFT
   - ''
   - ''
   - LSHFT
-  - LCTRL
-  - LALT
   - LGUI
+  - LALT
+  - LCTRL
   - ''
   - ''
   - {t: Undo, type: held}
@@ -144,9 +144,9 @@ layers:
   - Undo
   - ''
   - ''
-  - LGUI
-  - LALT
   - LCTRL
+  - LALT
+  - LGUI
   - LSHFT
   - ''
   - LEFT
@@ -187,9 +187,9 @@ layers:
   - Undo
   - ''
   - ''
-  - LGUI
-  - LALT
   - LCTRL
+  - LALT
+  - LGUI
   - LSHFT
   - ''
   - KP 4
@@ -230,9 +230,9 @@ layers:
   - RGB Tog
   - ''
   - ''
-  - LGUI
-  - LALT
   - LCTRL
+  - LALT
+  - LGUI
   - LSHFT
   - ''
   - PREV
@@ -280,9 +280,9 @@ layers:
   - '='
   - ''
   - LSHFT
-  - LCTRL
-  - LALT
   - LGUI
+  - LALT
+  - LCTRL
   - ''
   - ''
   - '`'
@@ -323,9 +323,9 @@ layers:
   - +
   - ''
   - LSHFT
-  - LCTRL
-  - LALT
   - LGUI
+  - LALT
+  - LCTRL
   - ''
   - ''
   - '~'
@@ -366,9 +366,9 @@ layers:
   - SLCK
   - ''
   - LSHFT
-  - LCTRL
-  - LALT
   - LGUI
+  - LALT
+  - LCTRL
   - ''
   - ''
   - F10
