@@ -14,10 +14,14 @@
 #include <zmk/event_manager.h>
 #include <zmk/events/ble_active_profile_changed.h>
 
-#define LOGO_SIZE 28
+#define LOGO_WIDTH 26
+#define LOGO_HEIGHT 50
+#define ART_SIZE 24
+#define ART_X ((LOGO_WIDTH - ART_SIZE) / 2)
+#define ART_Y ((LOGO_HEIGHT - ART_SIZE) / 2)
 
 static lv_obj_t *logo_canvas;
-static lv_color_t logo_buffer[LOGO_SIZE * LOGO_SIZE];
+static lv_color_t logo_buffer[LOGO_WIDTH * LOGO_HEIGHT];
 
 static lv_color_t background_color(void) {
     return IS_ENABLED(CONFIG_NICE_OLED_WIDGET_INVERTED) ? lv_color_black() : lv_color_white();
@@ -27,39 +31,43 @@ static lv_color_t foreground_color(void) {
     return IS_ENABLED(CONFIG_NICE_OLED_WIDGET_INVERTED) ? lv_color_white() : lv_color_black();
 }
 
+static void set_clockwise_pixel(int x, int y, lv_color_t color) {
+    lv_canvas_set_px_color(logo_canvas, ART_X + ART_SIZE - 1 - y, ART_Y + x, color);
+}
+
 static void draw_apple_logo(void) {
     const lv_color_t foreground = foreground_color();
 
-    for (int y = 0; y < LOGO_SIZE; y++) {
-        for (int x = 0; x < LOGO_SIZE; x++) {
-            const int left_x = x - 9;
-            const int right_x = x - 17;
-            const int lower_x = x - 13;
-            const int upper_y = y - 12;
-            const int lower_y = y - 16;
-            const int bite_x = x - 22;
-            const int bite_y = y - 10;
+    for (int y = 0; y < ART_SIZE; y++) {
+        for (int x = 0; x < ART_SIZE; x++) {
+            const int left_x = x - 7;
+            const int right_x = x - 14;
+            const int lower_x = x - 11;
+            const int upper_y = y - 10;
+            const int lower_y = y - 14;
+            const int bite_x = x - 19;
+            const int bite_y = y - 9;
 
-            bool body = (left_x * left_x * 36 + upper_y * upper_y * 49 <= 1764) ||
-                        (right_x * right_x * 36 + upper_y * upper_y * 49 <= 1764) ||
-                        (lower_x * lower_x * 25 + lower_y * lower_y * 49 <= 2025);
-            const bool bite = bite_x * bite_x + bite_y * bite_y <= 16;
+            bool body = (left_x * left_x + upper_y * upper_y <= 36) ||
+                        (right_x * right_x + upper_y * upper_y <= 36) ||
+                        (lower_x * lower_x * 25 + lower_y * lower_y * 36 <= 1296);
+            const bool bite = bite_x * bite_x + bite_y * bite_y <= 9;
 
-            if (body && !bite && y >= 7 && y <= 23) {
-                lv_canvas_set_px_color(logo_canvas, x, y, foreground);
+            if (body && !bite && y >= 6 && y <= 20) {
+                set_clockwise_pixel(x, y, foreground);
             }
         }
     }
 
     /* Leaf */
-    lv_canvas_set_px_color(logo_canvas, 15, 3, foreground);
-    lv_canvas_set_px_color(logo_canvas, 16, 3, foreground);
-    lv_canvas_set_px_color(logo_canvas, 14, 4, foreground);
-    lv_canvas_set_px_color(logo_canvas, 15, 4, foreground);
-    lv_canvas_set_px_color(logo_canvas, 16, 4, foreground);
-    lv_canvas_set_px_color(logo_canvas, 13, 5, foreground);
-    lv_canvas_set_px_color(logo_canvas, 14, 5, foreground);
-    lv_canvas_set_px_color(logo_canvas, 15, 5, foreground);
+    set_clockwise_pixel(13, 1, foreground);
+    set_clockwise_pixel(14, 1, foreground);
+    set_clockwise_pixel(12, 2, foreground);
+    set_clockwise_pixel(13, 2, foreground);
+    set_clockwise_pixel(14, 2, foreground);
+    set_clockwise_pixel(11, 3, foreground);
+    set_clockwise_pixel(12, 3, foreground);
+    set_clockwise_pixel(13, 3, foreground);
 }
 
 static void draw_windows_logo(void) {
@@ -69,17 +77,22 @@ static void draw_windows_logo(void) {
     pane.bg_opa = LV_OPA_COVER;
     pane.border_width = 0;
 
-    lv_canvas_draw_rect(logo_canvas, 4, 4, 9, 9, &pane);
-    lv_canvas_draw_rect(logo_canvas, 15, 4, 9, 9, &pane);
-    lv_canvas_draw_rect(logo_canvas, 4, 15, 9, 9, &pane);
-    lv_canvas_draw_rect(logo_canvas, 15, 15, 9, 9, &pane);
+    lv_canvas_draw_rect(logo_canvas, ART_X + 2, ART_Y + 2, 9, 9, &pane);
+    lv_canvas_draw_rect(logo_canvas, ART_X + 13, ART_Y + 2, 9, 9, &pane);
+    lv_canvas_draw_rect(logo_canvas, ART_X + 2, ART_Y + 13, 9, 9, &pane);
+    lv_canvas_draw_rect(logo_canvas, ART_X + 13, ART_Y + 13, 9, 9, &pane);
 }
 
 static void update_logo(uint8_t profile_index) {
     if (logo_canvas == NULL) {
-        logo_canvas = lv_canvas_create(lv_scr_act());
-        lv_canvas_set_buffer(logo_canvas, logo_buffer, LOGO_SIZE, LOGO_SIZE, LV_IMG_CF_TRUE_COLOR);
-        lv_obj_align(logo_canvas, LV_ALIGN_RIGHT_MID, -2, 0);
+        lv_obj_t *screen_widget = lv_obj_get_child(lv_scr_act(), 0);
+        lv_obj_t *status_canvas = lv_obj_get_child(screen_widget, 0);
+
+        logo_canvas = lv_canvas_create(status_canvas);
+        lv_canvas_set_buffer(logo_canvas, logo_buffer, LOGO_WIDTH, LOGO_HEIGHT,
+                             LV_IMG_CF_TRUE_COLOR);
+        lv_obj_align(logo_canvas, LV_ALIGN_TOP_LEFT, CONFIG_NICE_OLED_WIDGET_BONGO_CAT_CUSTOM_X,
+                     CONFIG_NICE_OLED_WIDGET_BONGO_CAT_CUSTOM_Y);
         lv_obj_clear_flag(logo_canvas, LV_OBJ_FLAG_SCROLLABLE);
     }
 
