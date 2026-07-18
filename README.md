@@ -1,7 +1,7 @@
 # ZMK Configuration for Corne with Miryoku
 
-[![Build ZMK firmware](https://github.com/re1983/zmk-for-keyboards/actions/workflows/build.yml/badge.svg)](https://github.com/re1983/zmk-for-keyboards/actions/workflows/build.yml)
-[![Generate Keymap Diagrams](https://github.com/re1983/zmk-for-keyboards/actions/workflows/generate-keymaps.yml/badge.svg)](https://github.com/re1983/zmk-for-keyboards/actions/workflows/generate-keymaps.yml)
+[![Build ZMK firmware](https://github.com/aivie13/zmk-for-keyboards/actions/workflows/build.yml/badge.svg)](https://github.com/aivie13/zmk-for-keyboards/actions/workflows/build.yml)
+[![Generate Keymap Diagrams](https://github.com/aivie13/zmk-for-keyboards/actions/workflows/generate-keymaps.yml/badge.svg)](https://github.com/aivie13/zmk-for-keyboards/actions/workflows/generate-keymaps.yml)
 [![keymap-drawer](https://img.shields.io/badge/keymap-drawer-blue)](https://caksoylar.github.io/keymap-drawer)
 
 My ZMK configuration for Corne keyboard with Miryoku layout.
