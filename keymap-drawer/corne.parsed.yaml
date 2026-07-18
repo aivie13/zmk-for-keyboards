@@ -1,7 +1,7 @@
 layout: {zmk_keyboard: corne}
 layers:
   Base:
-  - ''
+  - ESC
   - Q
   - W
   - E
@@ -12,8 +12,8 @@ layers:
   - I
   - O
   - P
-  - ''
-  - ''
+  - DEL
+  - LSHFT
   - {t: A, h: LCTRL}
   - {t: S, h: LALT}
   - {t: D, h: LGUI}
@@ -23,9 +23,9 @@ layers:
   - {t: J, h: LSHFT}
   - {t: K, h: LGUI}
   - {t: L, h: LALT}
-  - {t: '''', h: LCTRL}
-  - ''
-  - ''
+  - {t: ;, h: LCTRL}
+  - RSHFT
+  - LCTRL
   - {t: Z, h: Button}
   - {t: X, h: RALT}
   - C
@@ -36,7 +36,7 @@ layers:
   - ','
   - {t: ., h: RALT}
   - {t: /, h: Button}
-  - ''
+  - ''''
   - {t: ESC, h: Media}
   - {t: TAB, h: Nav}
   - {t: SPACE, h: Mouse}
@@ -149,11 +149,11 @@ layers:
   - LGUI
   - LSHFT
   - ''
+  - {t: Cps Wrd, s: CAPS}
   - LEFT
   - DOWN
   - UP
   - RIGHT
-  - {t: Cps Wrd, s: CAPS}
   - ''
   - ''
   - ''
@@ -247,11 +247,11 @@ layers:
   - To Fun
   - To Media
   - ''
+  - BT CLR ALL
   - BT 0
   - BT 1
   - BT 2
   - BT 3
-  - Out Tog
   - ''
   - {type: held}
   - ''
