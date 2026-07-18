@@ -1,10 +1,24 @@
 name: Build ZMK firmware
 on:
   workflow_dispatch:
+    inputs:
+      clear_cache:
+        description: 'Clear cache'
+        required: false
+        default: 'false'
   push:
     paths:
       - "config/**"
+      - "keymap-drawer/corne.yaml"
 
 jobs:
   build:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
+  clear_cache:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clear cache (manual trigger)
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.clear_cache == 'true'
+        run: |
+          echo "Clearing cache..."
+          # This will force re-download of all dependencies

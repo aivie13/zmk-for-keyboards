@@ -16,3 +16,12 @@
 		, <&pro_micro 14 GPIO_ACTIVE_HIGH>
 		;
 };
+/ {
+    chosen {
+      zmk,battery = &vbatt;
+    };
+
+    vbatt: vbatt {
+        compatible = "zmk,battery-nrf-vddh";
+    };
+};

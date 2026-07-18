@@ -1,0 +1,103 @@
+name: Generate Keymap Diagrams
+
+on:
+  push:
+    branches: [ main, zmk-for-corne ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  generate-keymaps:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        
+    - name: Install dependencies (pinned)
+      run: |
+        pip install \
+          keymap-drawer==0.21.0 \
+          PyYAML \
+          tree-sitter==0.24.0 \
+          tree-sitter-devicetree==0.14.1
+        
+    - name: Parse keymap from ZMK configuration (non-fatal)
+      run: |
+        echo "Attempting to parse keymap (ZMK -> YAML)"
+        set +e
+        keymap -c keymap-drawer/raw_configuration.yaml parse -z config/corne.keymap > keymap-drawer/corne.parsed.yaml
+        status=$?
+        set -e
+        if [ $status -ne 0 ]; then
+          echo "Parse failed (likely tree-sitter/macro expansion). Will draw using keymap-drawer/corne.yaml."
+        else
+          echo "Parse successful. Will draw using keymap-drawer/corne.parsed.yaml."
+        fi
+        
+    - name: Generate 1-Column Layout
+      run: |
+        INPUT_YAML=keymap-drawer/corne.yaml
+        if [ -f keymap-drawer/corne.parsed.yaml ]; then INPUT_YAML=keymap-drawer/corne.parsed.yaml; fi
+        keymap -c keymap-drawer/config_1_column.yaml draw "$INPUT_YAML" -o keymap-drawer/corne_1_column.svg
+        
+    - name: Generate 2-Column Layout (Compact)
+      run: |
+        INPUT_YAML=keymap-drawer/corne.yaml
+        if [ -f keymap-drawer/corne.parsed.yaml ]; then INPUT_YAML=keymap-drawer/corne.parsed.yaml; fi
+        keymap -c keymap-drawer/config_2_columns.yaml draw "$INPUT_YAML" -o keymap-drawer/corne_2_columns.svg
+        
+    - name: Generate 3-Column Layout (Very Compact)
+      run: |
+        INPUT_YAML=keymap-drawer/corne.yaml
+        if [ -f keymap-drawer/corne.parsed.yaml ]; then INPUT_YAML=keymap-drawer/corne.parsed.yaml; fi
+        keymap -c keymap-drawer/config_3_columns.yaml draw "$INPUT_YAML" -o keymap-drawer/corne_3_columns.svg
+        
+    - name: Generate Dark Theme
+      run: |
+        INPUT_YAML=keymap-drawer/corne.yaml
+        if [ -f keymap-drawer/corne.parsed.yaml ]; then INPUT_YAML=keymap-drawer/corne.parsed.yaml; fi
+        keymap -c keymap-drawer/config_dark.yaml draw "$INPUT_YAML" -o keymap-drawer/corne_dark.svg
+        
+    - name: Generate Raw Configuration Layout
+      run: |
+        INPUT_YAML=keymap-drawer/corne.yaml
+        if [ -f keymap-drawer/corne.parsed.yaml ]; then INPUT_YAML=keymap-drawer/corne.parsed.yaml; fi
+        keymap -c keymap-drawer/raw_configuration.yaml draw "$INPUT_YAML" -o keymap-drawer/corne_raw_config.svg
+        
+    - name: Generate Individual Layer Diagrams
+      run: |
+        INPUT_YAML=keymap-drawer/corne.yaml
+        if [ -f keymap-drawer/corne.parsed.yaml ]; then INPUT_YAML=keymap-drawer/corne.parsed.yaml; fi
+        mkdir -p keymap-drawer/layers
+        for L in Base Extra Tap Button Nav Mouse Media Num Sym Fun; do
+          OUT="keymap-drawer/layers/${L,,}.svg"
+          echo "Generating $L -> $OUT"
+          keymap -c keymap-drawer/raw_configuration.yaml draw "$INPUT_YAML" -o "$OUT" -s "$L" --keys-only
+        done
+        
+    - name: Generate Combos Diagram
+      run: |
+        INPUT_YAML=keymap-drawer/corne.yaml
+        if [ -f keymap-drawer/corne.parsed.yaml ]; then INPUT_YAML=keymap-drawer/corne.parsed.yaml; fi
+        keymap -c keymap-drawer/raw_configuration.yaml draw "$INPUT_YAML" -o keymap-drawer/corne_combos.svg --combos-only
+        
+    - name: Commit generated files
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        mkdir -p keymap-drawer/layers
+        git add keymap-drawer/*.svg keymap-drawer/layers/*.svg keymap-drawer/*.yaml
+        git diff --staged --quiet || git commit -m "Auto-update keymap diagrams [skip ci]"
+        
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref }}
