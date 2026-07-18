@@ -35,39 +35,28 @@ static void set_clockwise_pixel(int x, int y, lv_color_t color) {
     lv_canvas_set_px_color(logo_canvas, ART_X + ART_SIZE - 1 - y, ART_Y + x, color);
 }
 
+/*
+ * Rasterized at 24x24 from the Simple Icons Apple mark:
+ * https://github.com/simple-icons/simple-icons/blob/develop/icons/apple.svg
+ * Simple Icons is released under CC0-1.0.
+ */
+static const uint32_t apple_logo_rows[ART_SIZE] = {
+    0x000180, 0x000380, 0x000700, 0x000f00, 0x000e00, 0x000000,
+    0x03e3e0, 0x0ffff8, 0x0ffff8, 0x1ffff0, 0x1fffe0, 0x3fffe0,
+    0x3fffe0, 0x3fffe0, 0x3fffe0, 0x3fffe0, 0x1ffff0, 0x1ffff8,
+    0x1ffff8, 0x0ffff8, 0x0ffff0, 0x07fff0, 0x03ffe0, 0x01c1c0,
+};
+
 static void draw_apple_logo(void) {
     const lv_color_t foreground = foreground_color();
 
     for (int y = 0; y < ART_SIZE; y++) {
         for (int x = 0; x < ART_SIZE; x++) {
-            const int left_x = x - 7;
-            const int right_x = x - 14;
-            const int lower_x = x - 11;
-            const int upper_y = y - 10;
-            const int lower_y = y - 14;
-            const int bite_x = x - 19;
-            const int bite_y = y - 9;
-
-            bool body = (left_x * left_x + upper_y * upper_y <= 36) ||
-                        (right_x * right_x + upper_y * upper_y <= 36) ||
-                        (lower_x * lower_x * 25 + lower_y * lower_y * 36 <= 1296);
-            const bool bite = bite_x * bite_x + bite_y * bite_y <= 9;
-
-            if (body && !bite && y >= 6 && y <= 20) {
+            if ((apple_logo_rows[y] & (1U << (ART_SIZE - 1 - x))) != 0) {
                 set_clockwise_pixel(x, y, foreground);
             }
         }
     }
-
-    /* Leaf */
-    set_clockwise_pixel(13, 1, foreground);
-    set_clockwise_pixel(14, 1, foreground);
-    set_clockwise_pixel(12, 2, foreground);
-    set_clockwise_pixel(13, 2, foreground);
-    set_clockwise_pixel(14, 2, foreground);
-    set_clockwise_pixel(11, 3, foreground);
-    set_clockwise_pixel(12, 3, foreground);
-    set_clockwise_pixel(13, 3, foreground);
 }
 
 static void draw_windows_logo(void) {
