@@ -17,6 +17,7 @@
       flavor = "tap-preferred";
       bindings = <&kp>, <&kp>;
       hold-trigger-key-positions = <MIRYOKU_CORNE_RIGHT_HAND_KEYS>;
+      hold-trigger-on-release;
     };
     u_mt_right: u_mt_right {
       compatible = "zmk,behavior-hold-tap";
@@ -25,6 +26,7 @@
       flavor = "tap-preferred";
       bindings = <&kp>, <&kp>;
       hold-trigger-key-positions = <MIRYOKU_CORNE_LEFT_HAND_KEYS>;
+      hold-trigger-on-release;
     };
     u_lt: u_lt {
       compatible = "zmk,behavior-hold-tap";
