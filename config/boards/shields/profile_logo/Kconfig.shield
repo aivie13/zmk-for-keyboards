@@ -1,0 +1,2 @@
+config SHIELD_PROFILE_LOGO
+    def_bool $(shields_list_contains,profile_logo)
