@@ -38,8 +38,8 @@ layers:
   - {t: /, h: Button}
   - RSHFT
   - {t: ESC, h: Media}
-  - {t: TAB, h: Nav}
-  - {t: SPACE, h: Mouse}
+  - {t: SPACE, h: Nav}
+  - {t: TAB, h: Mouse}
   - {t: RET, h: Sym}
   - {t: BSPC, h: Num}
   - {t: DEL, h: Fun}
