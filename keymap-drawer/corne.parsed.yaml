@@ -89,16 +89,16 @@ layers:
   Tap: ['', Q, W, E, R, T, Y, U, I, O, P, '', '', A, S, D, F, G, H, J, K, L, '''', '', '', Z, X, C, V, B, N, M, ',', ., /, '', ESC, SPACE, TAB, RET, BSPC, DEL]
   Button:
   - ''
-  - Undo
-  - Cut
-  - Copy
-  - Paste
-  - Again
-  - Again
-  - Paste
-  - Copy
-  - Cut
-  - Undo
+  - Gui+Z
+  - Gui+X
+  - Gui+C
+  - Gui+V
+  - Sft+Gui+Z
+  - Sft+Gui+Z
+  - Gui+V
+  - Gui+C
+  - Gui+X
+  - Gui+Z
   - ''
   - ''
   - LCTRL
@@ -113,16 +113,16 @@ layers:
   - LCTRL
   - ''
   - ''
-  - {t: Undo, type: held}
-  - Cut
-  - Copy
-  - Paste
-  - Again
-  - Again
-  - Paste
-  - Copy
-  - Cut
-  - Undo
+  - {t: Gui+Z, type: held}
+  - Gui+X
+  - Gui+C
+  - Gui+V
+  - Sft+Gui+Z
+  - Sft+Gui+Z
+  - Gui+V
+  - Gui+C
+  - Gui+X
+  - Gui+Z
   - ''
   - Middle Button
   - Left Button
@@ -137,11 +137,11 @@ layers:
   - To Extra
   - To Base
   - ''
-  - Again
-  - Paste
-  - Copy
-  - Cut
-  - Undo
+  - Sft+Gui+Z
+  - Gui+V
+  - Gui+C
+  - Gui+X
+  - Gui+Z
   - ''
   - ''
   - LCTRL
@@ -180,11 +180,11 @@ layers:
   - To Extra
   - To Base
   - ''
-  - Again
-  - Paste
-  - Copy
-  - Cut
-  - Undo
+  - Sft+Gui+Z
+  - Gui+V
+  - Gui+C
+  - Gui+X
+  - Gui+Z
   - ''
   - ''
   - LCTRL
@@ -235,11 +235,11 @@ layers:
   - LGUI
   - LSHFT
   - ''
+  - EP Tog
   - PREV
   - VOL DN
   - VOL UP
   - NEXT
-  - EP Tog
   - ''
   - ''
   - ''
