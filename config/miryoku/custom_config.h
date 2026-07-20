@@ -6,4 +6,4 @@
 #define MIRYOKU_EXTRA_COLEMAKDH  // Different from base: Colemak-DH layout (QWFPB...)
 #define MIRYOKU_TAP_QWERTY
 #define MIRYOKU_NAV_VI        // This define takes care of the Media and Mouse layers as well
-
+#define MIRYOKU_CLIPBOARD_MAC // Command-based undo, redo, cut, copy, and paste
