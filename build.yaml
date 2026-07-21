@@ -14,12 +14,12 @@
 ---
 include:
   - board: nice_nano_v2 
-    # Add "profile_logo" to this shield list to restore the profile-aware
-    # Apple/Windows artwork on the central OLED.
-    shield: corne_left nice_oled
+    # Add "nice_oled profile_logo" to restore the custom OLED layout and
+    # profile-aware Apple/Windows artwork.
+    shield: corne_left
     snippet: studio-rpc-usb-uart
   - board: nice_nano_v2
-    shield: corne_right nice_oled
+    shield: corne_right
   
   # - board: nice_nano_v2
   #   shield: corne_left nice_view_adapter nice_view_custom
